@@ -17,7 +17,7 @@ import { useQuery } from "react-query";
 import { loadingCityAtom, placeAtom } from "./atom";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
-import ApiWeatherData from "@/api-call/weather-api";
+import { ApiWeatherData } from "@/api-call/actions";
 // import { format as dateFromate } from "date-format";
 
 // var format = require('date-format');

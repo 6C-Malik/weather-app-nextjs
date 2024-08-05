@@ -9,9 +9,7 @@ import { useState } from "react";
 import axios from "axios";
 import { loadingCityAtom, placeAtom } from "@/app/atom";
 import { useAtom } from "jotai";
-import ApiWeatherData from "@/api-call/weather-api";
-import ApiWeatherCurrentLocation from "@/api-call/weather-api-current-location";
-import ApiWeatherHandeChange from "@/api-call/weather-api-handle-change";
+import { ApiWeatherCurrentLocation, ApiWeatherHandeChange } from "@/api-call/actions";
 
 type Props = { location?: string };
 
@@ -79,7 +77,7 @@ export default function Navbar({ location }: Props) {
           const response = await ApiWeatherCurrentLocation(latitude, longitude);
           setTimeout(() => {
             setLoadingCity(false);
-            setPlace(response.city.name);
+            setPlace(response.name);
           }, 500);
         } catch (error) {
           setLoadingCity(false);
